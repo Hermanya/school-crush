@@ -1,0 +1,160 @@
+html, body, .page {
+    height:100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    overflow: hidden;
+    position: relative;
+    perspective: 800px;
+}
+
+.page {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.page > * {
+    position: absolute;
+    width: 100%;
+    max-width: 768px;
+    min-height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 16px gray;
+    backface-visibility: hidden;
+}
+
+.page > *:first-child {
+    transform: rotateY(180deg) translateX(50%);
+}
+
+.flipped {
+  transform: rotateY( 180deg );
+}
+
+.page > .shown {
+    display: block;
+}
+
+#schedule {
+    font-family: cursive;
+    color: darkblue;
+    background-color: #fff;
+    background-image:
+        linear-gradient(90deg, transparent 89.9%, #abced4 90%, #abced4 90.2%, transparent 90.3%),
+        linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 2.9em;
+    border-spacing: 0;
+}
+
+#schedule li {
+    font-size: 26px;
+    margin-top: 5px;
+    width: 90%;
+}
+
+#schedule h1 {
+    margin: 0;
+    margin-bottom: -5px;
+    text-align: center;
+    width: 90%;
+}
+
+#schedule li span {
+    float: right;
+    margin-right: -7%;
+    color: crimson;
+}
+
+#lesson {
+    margin: auto;
+    background-color: #fff;
+    background-image:
+        linear-gradient(90deg, transparent 9.8%, #abced4 9.9%, #abced4 10.1%, transparent 10.2%),
+        linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 2.9em;
+}
+
+.board {
+    margin-left: 19%;
+    margin-top: 64px;
+    position: relative;
+    font-family: monospace;
+}
+
+.score {
+    position: absolute;
+    left: 75%;
+    top: -5px;
+    color: crimson;
+    font-family: cursive;
+    font-size: 32px;
+}
+
+.tile {
+    position: absolute;
+    font-size: 2em;
+    transition: 0.5s;
+    text-shadow: 0 0 16px #444;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.selected {
+    transform-origin: 0.5em;
+    transform: scale(1.75);
+    border-radius: 50%;
+}
+
+.crushed {
+    transform-origin: 0.5em;
+    transform: scale(0.25);
+    border-radius: 50%;
+}
+
+.teacher {
+    position: absolute;
+    bottom: 0;
+    left: 12%;
+    font-size: 8em;
+    font-family: arial, helvetica;
+    z-index: 0;
+}
+
+.teacher p {
+    font-size: 16px;
+    top: 0;
+    position: absolute;
+    left: 100%;
+    min-width: 100%;
+    padding: 8px 16px;
+    background-color: #e5e5e5;
+    color: #0c0c0c;
+    border-radius: 16px;
+    box-shadow: 0 0 1px gray;
+}
+
+.teacher p:after {
+    content: "";
+    background: transparent;
+    position: absolute;
+    bottom: 2px;
+    left: -6px;
+    border: 8px solid transparent;
+    border-right-color: #e5e5e5;
+    transform: rotate(85deg);
+}
+
+.teacher p:before {
+    content: "";
+    background: transparent;
+    position: absolute;
+    bottom: 1px;
+    left: -7px;
+    border: 8px solid transparent;
+    border-right-color: rgba(0, 0, 0, 0.2);
+    transform: rotate(85deg);
+}
