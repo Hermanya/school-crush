@@ -1,31 +1,37 @@
 (function () {
     var subjects = [{
-            name: 'art',
-            icons: [0x1f301, 0x1f303, 0x1f304, 0x1f308, 0x1f30b]
+            name: "Geography",
+            icons: ["🗺", "🇺🇸", "🇪🇺", "🇷🇺", "🇨🇳"]
         }, {
-            name: 'astronomy',
-            icons: [0x1f315, 0x1f318, 0x1f31f, 0x1f52d, 0x1f30e]
+            name: "History",
+            icons: ["⚔", "🏺", "👑", "📜", "🗿"]
         }, {
-            name: 'asian culture',
-            icons: [0x1f38b, 0x1f38c, 0x1f38d, 0x1f38e, 0x1f38f]
+            name: "Chemistry",
+            icons: ["⚗", "👩🔬", "⚛", "🔬", "🎇"]
         }, {
-            name: 'music',
-            icons: [0x1f3b5, 0x1f3b7, 0x1f3b8, 0x1f3b9, 0x1f3bc]
+            name: "Biology",
+            icons: ["☣", "🐁", "🐒", "🌱", "🐠"]
         }, {
-            name: 'science',
-            icons: [0x1f52c, 0x1f52d, 0x1f4d0, 0x1f4c9, 0x1f680]
+            name: "Physics",
+            icons: ["⚙", "🔭", "💡",  "🔋", "☢"]
         }, {
-            name: 'gym',
-            icons: [0x1f3c0, 0x1f3ca, 0x1f3c8, 0x1f4aa, 0x1f3bf]
+            name: "English",
+            icons: ["✍", "🇬🇧", "🇺🇸", "📝", "💬"]
         }, {
-            name: 'informatics',
-            icons: [0x1f4bb, 0x1f4bd, 0x1f4be, 0x1f3ae, 0x1f4c2]
+            name: "Music",
+            icons: ["🎺", "🎻", "🎹", "👨‍🎤", "🎼"]
         }, {
-            name: 'biology',
-            icons: [0x1f401, 0x1f40b, 0x1f412, 0x1f33a, 0x1f331]
+            name: "Maths",
+            icons: ["🔢", "➕", "➖", "➗", "📊"]
         }, {
-            name: 'literature',
-            icons: [0x1f4d3, 0x1f4d4, 0x1f4d7, 0x1f4d9, 0x1f4dd]
+            name: "Art",
+            icons: ["🎭", "🖼", "🎨", "👩‍🎨", "👨‍🎨"]
+        }, {
+            name: "Physical education",
+            icons: ["⛹", "🏐", "🏅", "⚽", "🏈"]
+        }, {
+            name: "Informatics",
+            icons: ["👨‍💻", "🖥", "💿", "⌨", "🤖"]
         }],
         schedule = JSON.parse(localStorage.schedule || 'false') || createSchedule(),
         gameBegun,
@@ -66,12 +72,6 @@
         showSubject();
     }
 
-    function showAllEmojies(argument) {
-        for (var i = 0; i < 0x400; i++) {
-            boardElement.innerHTML += '<span title="_">&#x_;'.replace(/_/g, (127734 + i).toString(16)) + '</span>';
-        }
-    }
-
     boardElement.addEventListener('mousedown', tryToSwap);
 
     function showView() {
@@ -108,8 +108,7 @@
             gameBegun = true;
             score = 0;
             animationTime = 500;
-            document.querySelector('.score').textContent = '';
-
+            document.querySelector('.score').textContent = 'Let\'s get started!';
         });
     }
     showSubject();
@@ -139,7 +138,7 @@
     }
 
     function makeIcon () {
-        return '&#x_;'.replace('_', lesson.icons[lesson.icons.length * Math.random() | 0].toString(16));
+        return lesson.icons[lesson.icons.length * Math.random() | 0];
     }
 
     function setTransformation (tile) {

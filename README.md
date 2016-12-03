@@ -1,7 +1,7 @@
 School Crush :information_desk_person:
 --------------------------------------
 
-It's a typical "three in a row" game.
+It's a typical "three in a row" game. Now with Emoji :heart: :+1:.
 
 ![gameplay](screenshots/gameplay.png)
 
@@ -12,5 +12,6 @@ It's a typical "three in a row" game.
 - SCORE!
 
 ### To Do
+- post on pwa.rocks
 - 4+ makes row killer kind of things
 - hints

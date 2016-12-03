@@ -1,0 +1,10 @@
+{
+  "entrypoint": "index.html",
+  "fragments": [],
+  "sourceGlobs": [
+    "*.png"
+  ],
+  "includeDependencies": [
+    "manifest.json", "browserconfig.xml", "favicon.ico"
+  ]
+}
