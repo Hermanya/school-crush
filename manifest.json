@@ -14,5 +14,6 @@
 	],
 	"start_url": "/school-crush",
 	"theme_color": "#ffffff",
-	"display": "standalone"
+	"display": "standalone",
+	"orientation":  "portrait"
 }
